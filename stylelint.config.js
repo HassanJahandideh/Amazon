@@ -1,0 +1,15 @@
+module.exports = {
+  extends: "stylelint-config-standard",
+  ignoreFiles: [
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.html"
+  ],
+  rules: {
+    "indentation": 2,
+    "number-leading-zero": "always",
+    "string-quotes": "double"
+  }
+};
