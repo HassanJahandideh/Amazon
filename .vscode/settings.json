@@ -1,0 +1,15 @@
+{
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "less",
+    "postcss"
+  ],
+  "stylelint.ignoreFiles": [
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.html"
+  ]
+}
