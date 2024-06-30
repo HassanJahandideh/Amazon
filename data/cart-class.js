@@ -1,14 +1,14 @@
 class Cart {
    cartItems;
-   localStorageKey;
+   #localStorageKey;
 
    constructor(localStorageKey) {
-      this.localStorageKey = localStorageKey;
-      this.loadFromStorage();
+      this.#localStorageKey = localStorageKey;
+      this.#loadFromStorage();
    }
 
-   loadFromStorage() {
-    this.cartItems = JSON.parse(localStorage.getItem(this.localStorageKey));
+   #loadFromStorage() {
+    this.cartItems = JSON.parse(localStorage.getItem(this.#localStorageKey));
 
     if (!this.cartItems) {
      this.cartItems = [{
@@ -24,7 +24,7 @@ class Cart {
    };
 
    saveToStorage() {
-   localStorage.setItem(localStorageKey, JSON.stringify(this.cartItems));
+   localStorage.setItem(this.#localStorageKey, JSON.stringify(this.cartItems));
    }
 
    addToCart(productId) {
@@ -46,7 +46,7 @@ class Cart {
     });
   }
 
-  this.saveToStorage();
+   this.saveToStorage();
    }
 
    removeFromCart(productId) {
@@ -63,7 +63,7 @@ class Cart {
   this.saveToStorage();
    }
 
-updateDeliveryOption(productId, deliveryOptionId) {
+ updateDeliveryOption(productId, deliveryOptionId) {
   let matchingItem;
 
   this.cartItems.forEach((cartItem) => {
@@ -80,6 +80,8 @@ updateDeliveryOption(productId, deliveryOptionId) {
    
 const cart = new Cart('cart-oop');
 const businessCart = new Cart('cart-business');
+
+
 
 console.log(cart);
 console.log(businessCart);
